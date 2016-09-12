@@ -1,2 +1,29 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h1> My blog  </h1>
+
+<ul>
+  {{#each items}}
+    <li class = 'username'>
+      {{this.username}}
+    </li>
+    <p class = 'email'> {{this.email}} </p>
+  {{/each}}
+</ul>
+
+<section class = "create Users">
+  <h2> ADD Stuff </h2>
+    <form class = "addUser" action="/api/v1/items" method= "post">
+      <div>
+        <div class = "">
+          <label for "item-name"> What do you need to do? </label>
+        </div>
+        <input type = "text" name="name" value= "">
+      </div>
+      
+      <div>
+        <div class ="">
+          <label for="item-description"> Tell me more </label>
+        </div>
+        <textarea name ="description" rows="8" cols ="40" > </textarea>
+      </div>
+    </form>
+</section>
