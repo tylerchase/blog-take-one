@@ -2,10 +2,8 @@
 
 <ul>
   {{#each items}}
-    <li class = 'username'>
-      {{this.username}}
-    </li>
-    <p class = 'email'> {{this.email}} </p>
+    <li class = 'username'>{{this.username}}<span class='completed'><a href="/api/v1/items/delete/{{this.id}}">X</a></span></li>
+    <p class = 'email' >{{this.email}} </p>
   {{/each}}
 </ul>
 
