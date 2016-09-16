@@ -3,17 +3,11 @@
 var express = require('express');
 var router = express.Router();
 const pg = require('../db/knex_config.js')
+var data = require('../twilio.js')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  pg.select().table('users')
-  .then((rows) => {
-    res.render('index', {items: rows})
-  })
-  .catch((err) => {
-    console.error('Error getting from the database');
-    next(err)
-  })
+  data.sendText()
 });
 
 module.exports = router;
